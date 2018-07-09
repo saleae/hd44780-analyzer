@@ -25,3 +25,5 @@ if(MSVC)
 else()
     install(TARGETS hd44780_analyzer LIBRARY DESTINATION ".")
 endif()
+
+set_post_build_destination(hd44780_analyzer)
