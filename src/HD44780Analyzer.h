@@ -6,7 +6,7 @@
 #include "HD44780SimulationDataGenerator.h"
 
 class HD44780AnalyzerSettings;
-class ANALYZER_EXPORT HD44780Analyzer : public Analyzer2
+class HD44780Analyzer : public Analyzer2
 {
 public:
 	HD44780Analyzer();

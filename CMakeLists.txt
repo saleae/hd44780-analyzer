@@ -17,13 +17,4 @@ src/HD44780SimulationDataGenerator.cpp
 src/HD44780SimulationDataGenerator.h
 )
 
-add_library(hd44780_analyzer SHARED ${SOURCES})
-target_link_libraries(hd44780_analyzer PRIVATE Saleae::AnalyzerSDK)
-
-if(MSVC)
-    install(TARGETS hd44780_analyzer RUNTIME DESTINATION "Analyzers")
-else()
-    install(TARGETS hd44780_analyzer LIBRARY DESTINATION "Analyzers")
-endif()
-
-set_post_build_destination(hd44780_analyzer)
+add_analyzer_plugin(hd44780_analyzer SOURCES ${SOURCES})
