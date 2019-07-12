@@ -81,7 +81,8 @@ HD44780AnalyzerSettings::HD44780AnalyzerSettings()
 	mDBChannelInterface[7]->SetChannel( mDBChannel[7] );
 
   mMarkTimingErrorsInterface.reset( new AnalyzerSettingInterfaceBool() );
-	mMarkTimingErrorsInterface->SetTitleAndTooltip( "Mark Timing Errors", "Determines if timing errors will be marked." );
+	mMarkTimingErrorsInterface->SetTitleAndTooltip( "", "Determines if timing errors will be marked." );
+  mMarkTimingErrorsInterface->SetCheckBoxText( "Mark Timing Errors" );
 	mMarkTimingErrorsInterface->SetValue( mMarkTimingErrors );
 
 	mEnableCycleMinInterface.reset( new AnalyzerSettingInterfaceInteger() );
@@ -133,7 +134,8 @@ HD44780AnalyzerSettings::HD44780AnalyzerSettings()
 	mDataReadHoldMinInterface->SetInteger( mDataReadHoldMin );
 
   mIgnoreEPulsesWhenBusyInterface.reset( new AnalyzerSettingInterfaceBool() );
-	mIgnoreEPulsesWhenBusyInterface->SetTitleAndTooltip( "Ignore E Pulses When LCD Controller is Busy", "Determines if E pulses will be ignored when busy." );
+	mIgnoreEPulsesWhenBusyInterface->SetTitleAndTooltip( "", "" );
+  mIgnoreEPulsesWhenBusyInterface->SetCheckBoxText( "Ignore E Pulses When LCD Controller is Busy" );
 	mIgnoreEPulsesWhenBusyInterface->SetValue( mIgnoreEPulsesWhenBusy );
 
 	mBusyTimeClearHomeInterface.reset( new AnalyzerSettingInterfaceInteger() );
@@ -149,11 +151,13 @@ HD44780AnalyzerSettings::HD44780AnalyzerSettings()
 	mBusyTimeCmdCharInterface->SetInteger( mBusyTimeCmdChar );
 
   mStartIn4BitModeInterface.reset( new AnalyzerSettingInterfaceBool() );
-	mStartIn4BitModeInterface->SetTitleAndTooltip( "Start In 4-bit Mode (Init Missing)","Select this option for 4-bit mode when missing a proper init sequence." );
+	mStartIn4BitModeInterface->SetTitleAndTooltip( "","Select this option for 4-bit mode when missing a proper init sequence." );
+  mStartIn4BitModeInterface->SetCheckBoxText( "Start In 4-bit Mode (Init Missing)" );
 	mStartIn4BitModeInterface->SetValue( mStartIn4BitMode );
 
   mDoNotGenerateBusyCheckFramesInterface.reset( new AnalyzerSettingInterfaceBool() );
-	mDoNotGenerateBusyCheckFramesInterface->SetTitleAndTooltip( "Do Not Generate Frames for Busy Checks","Select this option to not generate frames for busy checks." );
+	mDoNotGenerateBusyCheckFramesInterface->SetTitleAndTooltip( "","Select this option to not generate frames for busy checks." );
+  mDoNotGenerateBusyCheckFramesInterface->SetCheckBoxText( "Do Not Generate Frames for Busy Checks" );
 	mDoNotGenerateBusyCheckFramesInterface->SetValue( mDoNotGenerateBusyCheckFrames);
 
   //add interfaces
